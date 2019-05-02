@@ -1,0 +1,36 @@
+buildscript {
+    ext {
+        springBootVersion = '2.1.0.RELEASE'
+    }
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+    }
+}
+group 'com.edutilos'
+version '1.0-SNAPSHOT'
+
+apply plugin: 'groovy'
+apply plugin: 'java'
+apply plugin: 'org.springframework.boot'
+apply plugin: 'io.spring.dependency-management'
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile group: 'org.springframework.boot', name: 'spring-boot-starter-web', version: '2.1.4.RELEASE'
+    compile 'org.codehaus.groovy:groovy-all:2.3.11'
+    compile("org.springframework.boot:spring-boot-starter-data-jpa")
+    compile('mysql:mysql-connector-java:8.0.13')
+    compile group: 'org.projectlombok', name: 'lombok', version: '1.18.6'
+
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+    testCompile group: 'org.springframework.boot', name: 'spring-boot-starter-test', version: '2.1.4.RELEASE'
+
+}

@@ -1,5 +1,6 @@
 .gradle/
 .idea/
+.idea/vcs.xml
 build/
 gradle/
 gradlew
